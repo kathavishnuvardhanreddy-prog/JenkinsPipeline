@@ -38,6 +38,8 @@ pipeline {
         }
 
         stage('Run Docker Container') {
+
+            // PUT THE when BLOCK HERE
             when {
                 expression {
                     params.DEPLOY_APP == 'Yes'
