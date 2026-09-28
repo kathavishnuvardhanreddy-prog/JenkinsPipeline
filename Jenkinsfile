@@ -31,6 +31,19 @@ pipeline {
             }
         }
 
+        stage('Credentials Test') {
+            steps {
+                withCredentials([
+                    string(
+                        credentialsId: 'demo-secret',
+                        variable: 'MY_SECRET'
+                    )
+                ]) {
+                    sh 'echo "Credential successfully loaded into Jenkins"'
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $APP_NAME:latest .'
@@ -38,8 +51,6 @@ pipeline {
         }
 
         stage('Run Docker Container') {
-
-            // PUT THE when BLOCK HERE
             when {
                 expression {
                     params.DEPLOY_APP == 'Yes'
