@@ -18,7 +18,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 sh 'docker rm -f jenkins-pipeline-container || true'
-                sh 'docker run -d --name jenkins-pipeline-container -p 8080:80 jenkins-pipeline-app:latest'
+                sh 'docker run -d --name jenkins-pipeline-container -p 8081:80 jenkins-pipeline-app:latest'
             }
         }
     }
