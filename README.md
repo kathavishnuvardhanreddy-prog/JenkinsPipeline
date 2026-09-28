@@ -27,29 +27,49 @@ Application Deployment
 
 What I Implemented
 Set up Jenkins on an AWS EC2 instance.
+
 Installed and configured Docker on the EC2 instance.
+
 Integrated Jenkins with a GitHub repository.
+
 Created a Jenkins Pipeline using a Jenkinsfile.
+
 Implemented pipeline stages for checkout, testing, Docker image creation, and deployment.
+
 Used Jenkins parameters for controlling application deployment.
+
 Practiced using Jenkins environment variables and credentials securely.
+
 Configured a GitHub Webhook to automatically trigger the Jenkins pipeline when code changes are pushed.
+
 Built and deployed a containerized web application using Docker and Nginx.
+
 Configured Docker port mapping to make the application accessible.
 
 Key Concepts Learned
 
 Jenkins Pipeline
+
 Jenkinsfile
+
 GitHub Webhooks
+
 CI/CD
+
 Docker Images and Containers
+
 Dockerfile
+
 Jenkins Parameters
+
 Jenkins Environment Variables
+
 Jenkins Credentials
+
 Conditional Pipeline Stages
+
 AWS EC2
+
 Automated Application Deployment
 
 Project Outcome
