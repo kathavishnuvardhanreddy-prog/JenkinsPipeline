@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(
+            name: 'DEPLOY_APP',
+            choices: ['Yes', 'No'],
+            description: 'Do you want to deploy the application?'
+        )
+    }
+
     environment {
         APP_NAME = 'jenkins-pipeline-app'
         CONTAINER_NAME = 'jenkins-pipeline-container'
@@ -30,6 +38,12 @@ pipeline {
         }
 
         stage('Run Docker Container') {
+            when {
+                expression {
+                    params.DEPLOY_APP == 'Yes'
+                }
+            }
+
             steps {
                 sh 'docker rm -f $CONTAINER_NAME || true'
                 sh 'docker run -d --name $CONTAINER_NAME -p $APP_PORT:80 $APP_NAME:latest'
